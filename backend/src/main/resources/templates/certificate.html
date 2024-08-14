@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate of Achievement</title>
+        <style>
+        /* Basic reset */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Certificate container */
+        .certificate {
+            width: 700px; /* Reduced width for better PDF fit */
+            margin: 20px auto;
+            padding: 20px; /* Reduced padding for better fit */
+            border: 4px solid #4a90e2; /* Slightly thinner border */
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Reduced shadow for better fit */
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 20px; /* Reduced margin for better fit */
+        }
+
+        header h1 {
+            font-size: 36px; /* Reduced font size for header */
+            color: #4a90e2;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px; /* Reduced padding for better fit */
+            font-weight: bold;
+        }
+
+        /* Content section */
+        .content {
+            margin-bottom: 20px; /* Reduced margin for better fit */
+        }
+
+        .content p {
+            font-size: 18px; /* Reduced font size for content */
+            margin-bottom: 10px; /* Reduced margin for better fit */
+        }
+
+        .recipient-name {
+            font-size: 28px; /* Reduced font size */
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .course-name {
+            font-size: 24px; /* Reduced font size */
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .issuer, .date {
+            font-size: 18px; /* Reduced font size */
+            color: #555;
+            margin: 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px; /* Reduced margin for better fit */
+            font-size: 18px; /* Reduced font size */
+            color: #333;
+        }
+
+        .signature {
+            margin-top: 20px; /* Reduced margin for better fit */
+            padding: 5px; /* Reduced padding for better fit */
+            border-top: 2px solid #4a90e2;
+            display: inline-block;
+            width: 250px; /* Reduced width for better fit */
+            text-align: center;
+        }
+    </style>
+    </head>
+<body>
+    <div class="certificate">
+        <header>
+            <h1>Certificate of Achievement</h1>
+        </header>
+        <section class="content">
+            <p>This is to certify that</p>
+            <h2 class="recipient-name" th:text="${name}"></h2>
+            <p>has successfully completed the</p>
+            <h3 class="course-name" th:text="${certificate_name}"></h3>
+            <p>Issued by: <span class="issuer" th:text="${issuer}"></span></p>
+            <p>Date: <span class="date" th:text="${date}"></span></p>
+        </section>
+        <footer>
+            <div class="signature">
+                <p>Alok Garg</p>
+                <p>---------------</p>
+                <p>Authorized Signature</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

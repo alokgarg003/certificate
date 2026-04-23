@@ -1,25 +1,32 @@
 package com.cdac.config;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import jakarta.annotation.PostConstruct;
 
 @Component
 public class JwtUtil {
 
-    private String secret = "8899398279adminhash256";
+    @Value("${app.jwt.secret:change-me-dev-secret}")
+    private String rawSecret;
 
-    public JwtUtil() {
-        this.secret = Base64.getEncoder().encodeToString(secret.getBytes());
+    private String secret;
+
+    @PostConstruct
+    public void init() {
+        this.secret = Base64.getEncoder().encodeToString(rawSecret.getBytes(StandardCharsets.UTF_8));
     }
 
     public String extractUsername(String token) {

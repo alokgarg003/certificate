@@ -1,0 +1,13 @@
+# Root-level dependency and build outputs
+node_modules/
+web/node_modules/
+backend/target/
+web/build/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS and logs
+.DS_Store
+*.log

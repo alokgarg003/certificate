@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest an enhancement for the product or developer experience
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to improve?
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this useful?
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
